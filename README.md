@@ -38,31 +38,41 @@ The entire ecosystem runs behind a multi-threaded **FastAPI** web routing micros
                                       ▼
                 [ ULTRA-LOW LATENCY JSON LIVE RESPONSE OUTPUT ]
 
-📈 Evolutionary Project Milestones & Progression
-Milestone 1: Foundations of Collaborative Filtering
-Built the mathematical core of item-based and user-based recommendations using raw Cosine Similarity arrays executed through pure Python loops.
-Transitioned manual loops to vectorized matrix dot products via NumPy, achieving massive performance scaling.
-Milestone 2: Parametric Deep Learning via Optimized NCF
-Migrated from non-parametric calculations to a trained parametric model using Neural Collaborative Filtering (NCF) in PyTorch.
-Implemented dense structural embedding lookup layers for users and items, processed through a deep Multi-Layer Perceptron (MLP) with custom Dropout regularization.
-Optimized model weights utilizing stochastic gradient descent to accurately predict user-item rating values.
-Milestone 3: Real-Time Vector Scaling via Faiss
-Extracted the learned weights from the item embedding matrix of the neural network to construct dense 64-dimensional semantic vectors for every movie.
-Loaded these vectors into a Faiss Index (Facebook AI Similarity Search) to handle index indexing. This replaced global database scanning with approximate nearest neighbor clustering math, collapsing sifting latencies down to microseconds.
-Milestone 4: Multi-Item Session Blending
-Built an active, stateful web server layer using FastAPI to track rolling user session patterns.
-Applied an Exponential Time-Decay Heuristic ($0.5^{\text{position}}$) to merge item histories. This ensured that a user's absolute latest click exerted significantly more pull on the search vector than older history.
-Milestone 5: The Graduation Architecture (Behavior Sequence Transformer)
-Upgraded the linear decay math into an industry-grade Sequential Behavior Transformer.
-Preprocessed the training corpus into 96,228 chronological sequence windows mapping a user's past 4 clicks to their next target interaction label.
-Developed a PyTorch Transformer architecture combining Item Lookup Embeddings with a learned Positional Embedding Matrix to maintain temporal structural memory.
-Passed data sequences through a stack of Multi-Head Self-Attention Encoder Layers to learn complex contextual actions dynamically, replacing heuristics with pure sequential deep learning.
-🛠️ Core Technology Stack
-Deep Learning Framework: PyTorch (Core Neural Architectures, Attention Blocks, Linear Layers)
-Vector Vector Engine: Faiss (Facebook AI Similarity Search for L2-Space Projections)
-Asynchronous Web Gateway: FastAPI & Uvicorn (Stateful Session Management & High-Throughput Routing)
-Data Processing Pipeline: Pandas, NumPy, Scikit-Learn
-Visualization Engine: Plotly Express & PCA (Dimensionality Reduction Diagnostics)
+## 📈 Evolutionary Project Milestones & Progression
+
+### Milestone 1: Foundations of Collaborative Filtering
+* Built the mathematical core of item-based and user-based recommendations using raw **Cosine Similarity** arrays executed through pure Python loops.
+* Transitioned manual loops to vectorized matrix dot products via **NumPy**, achieving massive performance scaling.
+
+### Milestone 2: Parametric Deep Learning via Optimized NCF
+* Migrated from non-parametric calculations to a trained parametric model using **Neural Collaborative Filtering (NCF)** in **PyTorch**.
+* Implemented dense structural embedding lookup layers for users and items, processed through a deep **Multi-Layer Perceptron (MLP)** with custom Dropout regularization.
+* Optimized model weights utilizing stochastic gradient descent to accurately predict user-item rating values.
+
+### Milestone 3: Real-Time Vector Scaling via Faiss
+* Extracted the learned weights from the item embedding matrix of the neural network to construct dense 64-dimensional semantic vectors for every movie.
+* Loaded these vectors into a **Faiss Index (Facebook AI Similarity Search)** to handle index indexing. This replaced global database scanning with approximate nearest neighbor clustering math, collapsing sifting latencies down to microseconds.
+
+### Milestone 4: Multi-Item Session Blending
+* Built an active, stateful web server layer using **FastAPI** to track rolling user session patterns.
+* Applied an **Exponential Time-Decay Heuristic** ($0.5^{\text{position}}$) to merge item histories. This ensured that a user's absolute latest click exerted significantly more pull on the search vector than older history.
+
+### Milestone 5: The Graduation Architecture (Behavior Sequence Transformer)
+* Upgraded the linear decay math into an industry-grade **Sequential Behavior Transformer**.
+* Preprocessed the training corpus into 96,228 chronological sequence windows mapping a user's past 4 clicks to their next target interaction label.
+* Developed a PyTorch Transformer architecture combining **Item Lookup Embeddings** with a learned **Positional Embedding Matrix** to maintain temporal structural memory.
+* Passed data sequences through a stack of **Multi-Head Self-Attention Encoder Layers** to learn complex contextual actions dynamically, replacing heuristics with pure sequential deep learning.
+
+---
+
+## 🛠️ Core Technology Stack
+* **Deep Learning Framework:** PyTorch (Core Neural Architectures, Attention Blocks, Linear Layers)
+* **Vector Vector Engine:** Faiss (Facebook AI Similarity Search for L2-Space Projections)
+* **Asynchronous Web Gateway:** FastAPI & Uvicorn (Stateful Session Management & High-Throughput Routing)
+* **Data Processing Pipeline:** Pandas, NumPy, Scikit-Learn
+* **Visualization Engine:** Plotly Express & PCA (Dimensionality Reduction Diagnostics)
+
+
 🗂️ Project Repository Map
 
 ├── data/                             # Raw MovieLens dataset files (Git ignored)
